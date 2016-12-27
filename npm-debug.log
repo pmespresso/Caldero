@@ -1,0 +1,298 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/7.1.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'flatpickr' ]
+2 info using npm@3.10.9
+3 info using node@v7.1.0
+4 verbose config Skipping project config: /Users/YJ/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData flatpickr
+9 silly fetchNamedPackageData flatpickr
+10 silly mapToRegistry name flatpickr
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'flatpickr',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'flatpickr',
+13 silly mapToRegistry   name: 'flatpickr',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/flatpickr
+15 verbose request uri https://registry.npmjs.org/flatpickr
+16 verbose request no auth needed
+17 info attempt registry request try #1 at 6:55:46 PM
+18 verbose request id a879c89a1f4298ef
+19 http request GET https://registry.npmjs.org/flatpickr
+20 http 200 https://registry.npmjs.org/flatpickr
+21 verbose headers { server: 'nginx/1.10.1',
+21 verbose headers   'content-type': 'application/json',
+21 verbose headers   'last-modified': 'Tue, 06 Dec 2016 22:57:38 GMT',
+21 verbose headers   etag: 'W/"58474262-1ac67"',
+21 verbose headers   'content-encoding': 'gzip',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   'content-length': '10927',
+21 verbose headers   'accept-ranges': 'bytes',
+21 verbose headers   date: 'Tue, 27 Dec 2016 02:55:42 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   age: '0',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-sjc3620-SJC',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1482807342.626466,VS0,VE120',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 200,
+22 silly get   { server: 'nginx/1.10.1',
+22 silly get     'content-type': 'application/json',
+22 silly get     'last-modified': 'Tue, 06 Dec 2016 22:57:38 GMT',
+22 silly get     etag: 'W/"58474262-1ac67"',
+22 silly get     'content-encoding': 'gzip',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     'content-length': '10927',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     date: 'Tue, 27 Dec 2016 02:55:42 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     age: '0',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-sjc3620-SJC',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1482807342.626466,VS0,VE120',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose get saving flatpickr to /Users/YJ/.npm/registry.npmjs.org/flatpickr/.cache.json
+24 verbose correctMkdir /Users/YJ/.npm correctMkdir not in flight; initializing
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule flatpickr@2.2.4 checking installable status
+38 silly cache add args [ 'flatpickr', null ]
+39 verbose cache add spec flatpickr
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'flatpickr',
+40 silly cache add   scope: null,
+40 silly cache add   escapedName: 'flatpickr',
+40 silly cache add   name: 'flatpickr',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed flatpickr@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for flatpickr
+43 info addNameTag [ 'flatpickr', 'latest' ]
+44 silly mapToRegistry name flatpickr
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'flatpickr',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'flatpickr',
+47 silly mapToRegistry   name: 'flatpickr',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/flatpickr
+49 verbose addNameTag registry:https://registry.npmjs.org/flatpickr not in flight; fetching
+50 verbose get https://registry.npmjs.org/flatpickr not expired, no request
+51 silly addNameTag next cb for flatpickr with tag latest
+52 silly addNamed flatpickr@2.2.4
+53 verbose addNamed "2.2.4" is a plain semver version for flatpickr
+54 silly mapToRegistry name flatpickr
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry data Result {
+57 silly mapToRegistry   raw: 'flatpickr',
+57 silly mapToRegistry   scope: null,
+57 silly mapToRegistry   escapedName: 'flatpickr',
+57 silly mapToRegistry   name: 'flatpickr',
+57 silly mapToRegistry   rawSpec: '',
+57 silly mapToRegistry   spec: 'latest',
+57 silly mapToRegistry   type: 'tag' }
+58 silly mapToRegistry uri https://registry.npmjs.org/flatpickr
+59 verbose addRemoteTarball https://registry.npmjs.org/flatpickr/-/flatpickr-2.2.4.tgz not in flight; adding
+60 verbose addRemoteTarball [ 'https://registry.npmjs.org/flatpickr/-/flatpickr-2.2.4.tgz',
+60 verbose addRemoteTarball   '6d708a7771fb888963ec9db8979a039f0f0db208' ]
+61 info retry fetch attempt 1 at 6:55:47 PM
+62 info attempt registry request try #1 at 6:55:47 PM
+63 http fetch GET https://registry.npmjs.org/flatpickr/-/flatpickr-2.2.4.tgz
+64 http fetch 200 https://registry.npmjs.org/flatpickr/-/flatpickr-2.2.4.tgz
+65 silly fetchAndShaCheck shasum 6d708a7771fb888963ec9db8979a039f0f0db208
+66 verbose addTmpTarball /var/folders/r2/jh7c8wzd2xvchcpqvwmd655w0000gn/T/npm-21343-d89936a5/registry.npmjs.org/flatpickr/-/flatpickr-2.2.4.tgz not in flight; adding
+67 verbose addTmpTarball already have metadata; skipping unpack for flatpickr@2.2.4
+68 verbose correctMkdir /Users/YJ/.npm correctMkdir not in flight; initializing
+69 silly cache afterAdd flatpickr@2.2.4
+70 verbose afterAdd /Users/YJ/.npm/flatpickr/2.2.4/package/package.json not in flight; writing
+71 verbose correctMkdir /Users/YJ/.npm correctMkdir not in flight; initializing
+72 verbose afterAdd /Users/YJ/.npm/flatpickr/2.2.4/package/package.json written
+73 silly loadAllDepsIntoIdealTree Finishing
+74 silly loadIdealTree Finishing
+75 silly currentTree YJ
+75 silly currentTree ├── asap@2.0.5
+75 silly currentTree ├── bower@1.7.7
+75 silly currentTree ├─┬ connect@3.4.1
+75 silly currentTree │ ├─┬ debug@2.2.0
+75 silly currentTree │ │ └── ms@0.7.1
+75 silly currentTree │ ├─┬ finalhandler@0.4.1
+75 silly currentTree │ │ ├── escape-html@1.0.3
+75 silly currentTree │ │ ├─┬ on-finished@2.3.0
+75 silly currentTree │ │ │ └── ee-first@1.1.1
+75 silly currentTree │ │ └── unpipe@1.0.0
+75 silly currentTree │ ├── parseurl@1.3.1
+75 silly currentTree │ └── utils-merge@1.0.0
+75 silly currentTree ├── core-js@1.2.7
+75 silly currentTree ├── encoding@0.1.12
+75 silly currentTree ├── fbjs@0.8.6
+75 silly currentTree ├── iconv-lite@0.4.13
+75 silly currentTree ├── is-stream@1.1.0
+75 silly currentTree ├── isomorphic-fetch@2.2.1
+75 silly currentTree ├── js-tokens@2.0.0
+75 silly currentTree ├─┬ knox@0.9.2
+75 silly currentTree │ ├─┬ debug@1.0.4
+75 silly currentTree │ │ └── ms@0.6.2
+75 silly currentTree │ ├── mime@1.3.4
+75 silly currentTree │ ├─┬ once@1.3.3
+75 silly currentTree │ │ └── wrappy@1.0.1
+75 silly currentTree │ ├── stream-counter@1.0.0
+75 silly currentTree │ └─┬ xml2js@0.4.16
+75 silly currentTree │   ├── sax@1.1.5
+75 silly currentTree │   └─┬ xmlbuilder@4.2.1
+75 silly currentTree │     └── lodash@4.5.1
+75 silly currentTree ├── loose-envify@1.3.0
+75 silly currentTree ├── node-fetch@1.6.3
+75 silly currentTree ├─┬ oauth2-server@2.4.1
+75 silly currentTree │ └── basic-auth@0.0.1
+75 silly currentTree ├── object-assign@4.1.0
+75 silly currentTree ├── promise@7.1.1
+75 silly currentTree ├── react-native-camera@0.3.8
+75 silly currentTree ├── react@15.3.2
+75 silly currentTree ├─┬ serve-static@1.10.2
+75 silly currentTree │ ├── escape-html@1.0.3
+75 silly currentTree │ ├── parseurl@1.3.1
+75 silly currentTree │ └─┬ send@0.13.1
+75 silly currentTree │   ├── debug@2.2.0
+75 silly currentTree │   ├── depd@1.1.0
+75 silly currentTree │   ├── destroy@1.0.4
+75 silly currentTree │   ├── etag@1.7.0
+75 silly currentTree │   ├── fresh@0.3.0
+75 silly currentTree │   ├─┬ http-errors@1.3.1
+75 silly currentTree │   │ └── inherits@2.0.1
+75 silly currentTree │   ├── mime@1.3.4
+75 silly currentTree │   ├── ms@0.7.1
+75 silly currentTree │   ├─┬ on-finished@2.3.0
+75 silly currentTree │   │ └── ee-first@1.1.1
+75 silly currentTree │   ├── range-parser@1.0.3
+75 silly currentTree │   └── statuses@1.2.1
+75 silly currentTree ├── ua-parser-js@0.7.11
+75 silly currentTree └── whatwg-fetch@1.0.0
+76 silly idealTree YJ
+76 silly idealTree ├── asap@2.0.5
+76 silly idealTree ├── bower@1.7.7
+76 silly idealTree ├─┬ connect@3.4.1
+76 silly idealTree │ ├─┬ debug@2.2.0
+76 silly idealTree │ │ └── ms@0.7.1
+76 silly idealTree │ ├─┬ finalhandler@0.4.1
+76 silly idealTree │ │ ├── escape-html@1.0.3
+76 silly idealTree │ │ ├─┬ on-finished@2.3.0
+76 silly idealTree │ │ │ └── ee-first@1.1.1
+76 silly idealTree │ │ └── unpipe@1.0.0
+76 silly idealTree │ ├── parseurl@1.3.1
+76 silly idealTree │ └── utils-merge@1.0.0
+76 silly idealTree ├── core-js@1.2.7
+76 silly idealTree ├── encoding@0.1.12
+76 silly idealTree ├── fbjs@0.8.6
+76 silly idealTree ├── flatpickr@2.2.4
+76 silly idealTree ├── iconv-lite@0.4.13
+76 silly idealTree ├── is-stream@1.1.0
+76 silly idealTree ├── isomorphic-fetch@2.2.1
+76 silly idealTree ├── js-tokens@2.0.0
+76 silly idealTree ├─┬ knox@0.9.2
+76 silly idealTree │ ├─┬ debug@1.0.4
+76 silly idealTree │ │ └── ms@0.6.2
+76 silly idealTree │ ├── mime@1.3.4
+76 silly idealTree │ ├─┬ once@1.3.3
+76 silly idealTree │ │ └── wrappy@1.0.1
+76 silly idealTree │ ├── stream-counter@1.0.0
+76 silly idealTree │ └─┬ xml2js@0.4.16
+76 silly idealTree │   ├── sax@1.1.5
+76 silly idealTree │   └─┬ xmlbuilder@4.2.1
+76 silly idealTree │     └── lodash@4.5.1
+76 silly idealTree ├── loose-envify@1.3.0
+76 silly idealTree ├── node-fetch@1.6.3
+76 silly idealTree ├─┬ oauth2-server@2.4.1
+76 silly idealTree │ └── basic-auth@0.0.1
+76 silly idealTree ├── object-assign@4.1.0
+76 silly idealTree ├── promise@7.1.1
+76 silly idealTree ├── react-native-camera@0.3.8
+76 silly idealTree ├── react@15.3.2
+76 silly idealTree ├─┬ serve-static@1.10.2
+76 silly idealTree │ ├── escape-html@1.0.3
+76 silly idealTree │ ├── parseurl@1.3.1
+76 silly idealTree │ └─┬ send@0.13.1
+76 silly idealTree │   ├── debug@2.2.0
+76 silly idealTree │   ├── depd@1.1.0
+76 silly idealTree │   ├── destroy@1.0.4
+76 silly idealTree │   ├── etag@1.7.0
+76 silly idealTree │   ├── fresh@0.3.0
+76 silly idealTree │   ├─┬ http-errors@1.3.1
+76 silly idealTree │   │ └── inherits@2.0.1
+76 silly idealTree │   ├── mime@1.3.4
+76 silly idealTree │   ├── ms@0.7.1
+76 silly idealTree │   ├─┬ on-finished@2.3.0
+76 silly idealTree │   │ └── ee-first@1.1.1
+76 silly idealTree │   ├── range-parser@1.0.3
+76 silly idealTree │   └── statuses@1.2.1
+76 silly idealTree ├── ua-parser-js@0.7.11
+76 silly idealTree └── whatwg-fetch@1.0.0
+77 silly generateActionsToTake Starting
+78 silly install generateActionsToTake
+79 warn checkPermissions Missing write access to /Users/YJ/node_modules
+80 silly rollbackFailedOptional Starting
+81 silly rollbackFailedOptional Finishing
+82 silly runTopLevelLifecycles Finishing
+83 silly install printInstalled
+84 warn enoent ENOENT: no such file or directory, open '/Users/YJ/package.json'
+85 verbose enoent ENOENT: no such file or directory, open '/Users/YJ/package.json'
+85 verbose enoent This is most likely not a problem with npm itself
+85 verbose enoent and is related to npm not being able to find a file.
+86 warn YJ No description
+87 verbose If you need help, you may report this error at:
+87 verbose     <https://github.com/npm/npm/issues>
+88 warn YJ No repository field.
+89 verbose If you need help, you may report this error at:
+89 verbose     <https://github.com/npm/npm/issues>
+90 warn YJ No README data
+91 verbose If you need help, you may report this error at:
+91 verbose     <https://github.com/npm/npm/issues>
+92 warn YJ No license field.
+93 verbose If you need help, you may report this error at:
+93 verbose     <https://github.com/npm/npm/issues>
+94 verbose stack Error: EACCES: permission denied, access '/Users/YJ/node_modules'
+95 verbose cwd /Users/YJ/Documents/sideprojects/caldero
+96 error Darwin 16.3.0
+97 error argv "/usr/local/Cellar/node/7.1.0/bin/node" "/usr/local/bin/npm" "install" "flatpickr"
+98 error node v7.1.0
+99 error npm  v3.10.9
+100 error path /Users/YJ/node_modules
+101 error code EACCES
+102 error errno -13
+103 error syscall access
+104 error Error: EACCES: permission denied, access '/Users/YJ/node_modules'
+104 error  { Error: EACCES: permission denied, access '/Users/YJ/node_modules'
+104 error   errno: -13,
+104 error   code: 'EACCES',
+104 error   syscall: 'access',
+104 error   path: '/Users/YJ/node_modules' }
+105 error Please try running this command again as root/Administrator.
+106 verbose exit [ -13, true ]

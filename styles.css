@@ -1,0 +1,17 @@
+body, * {
+	box-sizing: border-box;
+}
+
+section {
+	padding: 30px 20px;
+	margin: 0 auto;
+}
+
+input {
+	padding: 10px 20px;
+	margin: 10px auto;
+}
+
+form#mandatory_entry > input {
+	width: 300px;
+}

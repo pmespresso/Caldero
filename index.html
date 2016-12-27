@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+
+		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+		<script src="https://use.fontawesome.com/36b79cd5df.js"></script>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<header>
+			<h1 style="text-align: center">CalDero</h1>
+			<div id="authorize-div">
+	      <span>Authorize access to Google Calendar API</span>
+	      <!--Button for the user to click to initiate auth sequence -->
+	      <button id="authorize-button" onclick="handleAuthClick(event)">
+	        Authorize
+	      </button>
+	    </div>
+		</header>
+
+	<!--+++++++++++++++++++++++++ ENTRY STEP ++++++++++++++++++++++++-->
+    	<div class="col-md-4 __entry_step">
+    		<section class="mandatories__section">
+				<h3> Enter Mandatories: </h3>
+					<form id="mandatory_entry" action="">
+						Task Name: <input class="summary" id="summary" type="text" name="summary" placeholder="Untitled Event (Optional)"  />
+						<br/>
+						Location: <input class="location" id="location" type="text" name="location" placeholder="No Location (Optional)"  />
+						<br/>
+						<small><i>Only Start and End Fields Are Necessary.</i></small>
+						<p class="flatpickr">
+							Start: <input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
+							<a class="input-button" data-toggle><i class="fa fa-calendar"></i></a>
+							<a class="input-button" data-clear><i class="fa fa-close"></i></a>
+							</br/> <!--End time must be later than Start time-->
+						</p>
+						<p class="flatpickr">
+							End: <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
+							<a class="input-button" data-toggle><i class="fa fa-calendar"></i></a>
+							<a class="input-button" data-clear><i class="fa fa-close"></i></a>
+							</br/> <!--End time must be later than Start time-->
+						</p>
+
+						<input type="submit" name="submit" />
+					</form>
+			</section>
+
+			<!-- <section class="wanttos__section">
+			<h3> Enter Want To's: </h3>
+				<form id="wanttos_entry" action="">
+					<input id="wanttos_event__summary" type="text" name="summary" placeholder="summary">
+					<input id="wanttos_event__location" type="text" name="location" placeholder="location">
+					<input id="wanttos_event__description" type="text" name="description" placeholder="description">
+					<input id="wanttos_event__start-end" type="text" name="start-end" placeholder="start-end">
+<br />
+					500 hours 5,000 hours 10,000 hours <br/>
+					<input type="radio" name="desired-proficiency">Meh
+					<input type="radio" name="desired-proficiency">Mullah
+					<input type="radio" name="desired-proficiency">Master
+
+					<input type="submit" name="submit">
+
+				</form>
+			</section>
+
+			<section class="workload__section">
+				<p> Desired Toal Work per Week: </p>
+				<form>
+					<input type="text" name="hoursPerWeek" placeholder="e.g. 60 hours per week">
+					<input type="submit" name="submit">
+				</form>
+
+			</section>-->
+    	</div>
+		<!--+++++++++++++++++++++++++ INVENTORY SCREEN ++++++++++++++++++++++++-->
+    	<div class="col-md-4 __inventory">
+				<section>
+					<h3> Inventory Preview</h3>
+				</section>
+
+    		<section class="mandatory__events">
+					<h4>Mandatory Things To Do</h4>
+					<div class="event-container">
+							<ul class="events">
+
+							</ul>
+					</div>
+    		</section>
+
+    		<section class="wantto__events">
+					<h4>Things I Want To Do</h4>
+					<div class="event-container">
+							<ul class="events">
+
+							</ul>
+					</div>
+    		</section>
+    	</div>
+
+    	<!--+++++++++++++++++++++++++ CONFIRMATION STEP ++++++++++++++++++++++++-->
+    	<div class="col-md-4 __confirmation_step">
+    		<h3> Schedule Preview </h3>
+				<pre id="output"></pre>
+    	</div>
+
+		<!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+			<script src="moment.js"></script>
+			<script src="https://unpkg.com/flatpickr"></script>
+			<script src="./gcal.js"></script>
+			<script src="./main.js"></script>
+			<!-- <script>$("#startDateTime").flatpickr({})</script> -->
+
+	</body>
+</html>
