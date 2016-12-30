@@ -33,26 +33,25 @@
     	<div class="col-md-4 __entry_step">
     		<section class="mandatories__section">
 				<h3> Enter Mandatories: </h3>
-					<form id="mandatory_entry" action="">
-						Task Name: <input class="summary" id="summary" type="text" name="summary" placeholder="Untitled Event (Optional)"  />
+					<form id="mandatory_entry" action="" name="mandatory_entry">
+						<label for="summary">Task Name: </label>
+						<input class="summary" id="summary" type="text" name="summary" placeholder="e.g. History 4A Lecture"  />
 						<br/>
-						Location: <input class="location" id="location" type="text" name="location" placeholder="No Location (Optional)"  />
+						<label for="location">Location:</label><input class="location" id="location" type="text" name="location" placeholder="404 Wheel Hall"  />
 						<br/>
-						<small><i>Only Start and End Fields Are Necessary.</i></small>
-						<p class="flatpickr">
-							Start: <input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
-							<a class="input-button" data-toggle><i class="fa fa-calendar"></i></a>
-							<a class="input-button" data-clear><i class="fa fa-close"></i></a>
-							</br/> <!--End time must be later than Start time-->
-						</p>
-						<p class="flatpickr">
-							End: <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
-							<a class="input-button" data-toggle><i class="fa fa-calendar"></i></a>
-							<a class="input-button" data-clear><i class="fa fa-close"></i></a>
-							</br/> <!--End time must be later than Start time-->
-						</p>
 
-						<input type="submit" name="submit" />
+						<p class="flatpickr">
+							<label for="startDateTime">Start:</label>
+							<input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
+ 							<!--End time must be later than Start time-->
+						</p>
+						<p class="flatpickr">
+							<label for="endDateTime">End:</label> <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
+							<!-- <a class="input-button" data-clear><i class="fa fa-close"></i></a> -->
+							<!--End time must be later than Start time-->
+						</p>
+						<button type="submit" name="submit" >Submit</button> <br/>
+						<small><i>Only Start and End Fields Are Necessary.</i></small>
 					</form>
 			</section>
 
@@ -91,11 +90,17 @@
 
     		<section class="mandatory__events">
 					<h4>Mandatory Things To Do</h4>
-					<div class="event-container">
+					<section>
 							<ul class="events">
-
+								<li>
+									<p class="event_detail" id="name">CogSci C126 Lecture</p>
+									<p class="event_detail" id="location">Hearst Mining Building</p>
+									<p class="event_detail" id="start">2016-01-17 12:00:00</p>
+									<p class="event_detail" id="end">2016-01-17 13:30:00</p>
+									<button class="deleteBtn" onclick="remove(this)" >Delete</button>
+								</li>
 							</ul>
-					</div>
+					</section>
     		</section>
 
     		<section class="wantto__events">
@@ -116,13 +121,13 @@
 
 		<!-- Scripts -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 			<script src="moment.js"></script>
 			<script src="https://unpkg.com/flatpickr"></script>
 			<script src="./gcal.js"></script>
 			<script src="./main.js"></script>
-			<!-- <script>$("#startDateTime").flatpickr({})</script> -->
 
 	</body>
 </html>

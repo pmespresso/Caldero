@@ -1,17 +1,12 @@
 //TODO: Clean up with Object.prototype, make more modular
 
-window.onload = function () {
-  console.log("chcek");
-}
-
-var mandatory_fields = {
-	'event1': {
-		summary: 'Untitled Event',
-		location: 'Some Location in Some Place',
-		startDateTime: 'Datetime Format',
-		endDateTime: 'Datetime Format'
-	}
-}
+/* Array of event objects to be passed to G-Cal
+* Get the 3rd event by mandatory_fields[2].
+*
+* {summary: '', location: '', startDateTime: '', endDateTime: ''}
+*
+*/
+let mandatory_fields = [];
 
 $(".flatpickr").flatpickr({
 	enableTime: true,
@@ -35,62 +30,140 @@ $(".flatpickr").flatpickr({
 function getDate(datetime) {
 		return datetime.substr(0, datetime.indexOf(' '));
 }
+/**
+* onClick delete button, remove the relevant <li> element.
+* Figure out whether to remove event from mandatory_fields or wantto_fields
+* @param {Object} e DOM Node corresponding to Delete Button.
+*/
+function remove(e) {
+  e.parentNode.parentNode.removeChild(e.parentNode);
+
+  // Hack: Just ignoring wantto's for now. Just assume it's mandatory event.
+  let th = e.id.substr(e.length - 2, e.length);
+}
+
+/**
+* Validate form and submit.
+*/
+
+$(function() {
+  $("form[name='mandatory_entry']").validate({
+    rules: {
+      startDateTime: "required",
+      endDateTime: "required"
+    },
+    messages: {
+      startDateTime: "When Does This Start?",
+      endDateTime: "When Does This End?"
+    },
+    submitHandler: function() {
+      /* Get input values */
+      let summary = $('form#mandatory_entry').children('#summary').val();
+      // TODO: change to location picker
+      let location = $('form#mandatory_entry').children('#location').val();
+      let startDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#startDateTime").val();
+      let endDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#endDateTime").val();
+
+      /* Create new Event# object and push object to mandatory_fields */
+      let newEvent = {
+        summary: summary || 'Untitled Event',
+        location: location || 'No Location Specified',
+        startDateTime: startDateTime,
+        endDateTime: endDateTime
+      }
+      mandatory_fields.push(newEvent);
+
+      /* Display New Input in Inventory */
+      let events = $('.mandatory__events ul.events'),
+          newLi = document.createElement('li'),
+          nameDiv = document.createElement('p'),
+          locDiv = document.createElement('p'),
+          startDiv = document.createElement('p'),
+          endDiv = document.createElement('p'),
+          deleteBtn = document.createElement('button');
+
+      nameDiv.append(document.createTextNode(newEvent.summary));
+      locDiv.append(document.createTextNode(newEvent.location));
+      startDiv.append(document.createTextNode(newEvent.startDateTime));
+      endDiv.append(document.createTextNode(newEvent.endDateTime));
+      deleteBtn.append(document.createTextNode("Delete"));
+
+      nameDiv.className = locDiv.className =
+      startDiv.className = endDiv.className = "event_detail";
+
+      deleteBtn.className = "deleteBtn";
+      deleteBtn.id = "event_" + mandatory_fields.length;
+      deleteBtn.onclick = function() {
+        remove(deleteBtn);
+      }
+
+      nameDiv.id = "name";
+      locDiv.id = "location";
+      startDiv.id = "start";
+      endDiv.id = "end";
+
+      newLi.append(nameDiv, locDiv, startDiv, endDiv, deleteBtn);
+      events.append(newLi);
+      // TODO: clear input fields
+      $('form#mandatory_entry')[0].reset();
+    }
+  });
+});
 
 /*
  * On submit mandatory entry,
  * Create a Google Calendar event object and
  * Display preview in the Inventories section
 */
-$('form#mandatory_entry').submit(function(e) {
-	e.preventDefault();
-
-	if (validateForm($('form#mandatory_entry'))) {
-		/* Get input values */
-		mandatory_fields.summary = $('form#mandatory_entry').children('#summary').val();
-		// TODO: change to location picker
-		mandatory_fields.location = $('form#mandatory_entry').children('#location').val();
-		mandatory_fields.startDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#startDateTime").val();
-		mandatory_fields.endDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#endDateTime").val();
-
-		/* Display New Input in Inventory */
-		var events = $('.mandatory__events ul.events'),
-				newLi = document.createElement('li');
-		newLi.append(mandatory_fields.summary + " ");
-		newLi.append(mandatory_fields.location + " ");
-		newLi.append(mandatory_fields.startDateTime + " ");
-		newLi.append(mandatory_fields.endDateTime + " ");
-		events.append(newLi);
-	} else {
-		// give an error next to the input with an issue.
-		console.error("did not pass validate form");
-	}
-	// TODO: clear input fields
-	mandatory_fields.summary
-});
-/*
- * Boolean
- * Return true if the form inputs pass the following conditions:
- 	* startDateTime and endDateTime are not empty/undefined and are Datetime formatted Strings
- 	* location is the GPlaces formatted String, or empty String
- 	* summary is a String, or empty String
- * Else return false
- */
-function validateForm(field) {
-	var children = field.children();
-
-	for (var i = 0; i < children.length; i++) {
-		// check summary
-		let summary = children.children('#summary').val();
-		// check location
-		let location = children.children("#location").val();
-		if (!summary || !location) console.log("Continuing with no summary or location");
-
-		// check datetimes
-		let startDateTime = field.children('p.flatpickr').children('#startDateTime').val();
-		let endDateTime = field.children('p.flatpickr').children('#endDateTime').val();
-
-		// check both not empty
-		if (!startDateTime || !endDateTime) return false;
-	}
-	return true;
-}
+// $('form#mandatory_entry').submit(function(e) {
+//   e.preventDefault();
+//   /* Get input values */
+//   let summary = $('form#mandatory_entry').children('#summary').val();
+//   // TODO: change to location picker
+//   let location = $('form#mandatory_entry').children('#location').val();
+//   let startDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#startDateTime").val();
+//   let endDateTime = $('form#mandatory_entry').children('p.flatpickr').children("#endDateTime").val();
+//
+//   /* Create new Event# object and push object to mandatory_fields */
+//   let newEvent = {
+//     summary: summary || 'Untitled Event',
+//     location: location || 'No Location Specified',
+//     startDateTime: startDateTime,
+//     endDateTime: endDateTime
+//   }
+//   mandatory_fields.push(newEvent);
+//
+//   /* Display New Input in Inventory */
+//   let events = $('.mandatory__events ul.events'),
+//       newLi = document.createElement('li'),
+//       nameDiv = document.createElement('p'),
+//       locDiv = document.createElement('p'),
+//       startDiv = document.createElement('p'),
+//       endDiv = document.createElement('p'),
+//       deleteBtn = document.createElement('button');
+//
+//   nameDiv.append(document.createTextNode(newEvent.summary));
+//   locDiv.append(document.createTextNode(newEvent.location));
+//   startDiv.append(document.createTextNode(newEvent.startDateTime));
+//   endDiv.append(document.createTextNode(newEvent.endDateTime));
+//   deleteBtn.append(document.createTextNode("Delete"));
+//
+//   nameDiv.className = locDiv.className =
+//   startDiv.className = endDiv.className = "event_detail";
+//
+//   deleteBtn.className = "deleteBtn";
+//   deleteBtn.id = "event_" + mandatory_fields.length;
+//   deleteBtn.onclick = function() {
+//     remove(deleteBtn);
+//   }
+//
+//   nameDiv.id = "name";
+//   locDiv.id = "location";
+//   startDiv.id = "start";
+//   endDiv.id = "end";
+//
+//   newLi.append(nameDiv, locDiv, startDiv, endDiv, deleteBtn);
+//   events.append(newLi);
+//   // TODO: clear input fields
+//   $('form#mandatory_entry')[0].reset();
+// });
