@@ -83,40 +83,33 @@
 			</section>-->
     	</div>
 		<!--+++++++++++++++++++++++++ INVENTORY SCREEN ++++++++++++++++++++++++-->
-    	<div class="col-md-4 __inventory">
+    	<div class="col-md-8 week_preview">
+				<header>
+					<h3> Week Preview </h3>
+				</header>
+
 				<section>
-					<h3> Inventory Preview</h3>
-				</section>
-
-    		<section class="mandatory__events">
-					<h4>Mandatory Things To Do</h4>
-					<section>
-							<ul class="events">
-								<li>
-									<p class="event_detail" id="name">CogSci C126 Lecture</p>
-									<p class="event_detail" id="location">Hearst Mining Building</p>
-									<p class="event_detail" id="start">2016-01-17 12:00:00</p>
-									<p class="event_detail" id="end">2016-01-17 13:30:00</p>
-									<button class="deleteBtn" onclick="remove(this)" >Delete</button>
-								</li>
-							</ul>
-					</section>
-    		</section>
-
-    		<section class="wantto__events">
-					<h4>Things I Want To Do</h4>
-					<div class="event-container">
-							<ul class="events">
-
-							</ul>
+					<div class="week">
+					  <ul>
+					    <li id="preview_hero">
+					      A Typical Week
+					    </li>
+					  </ul>
 					</div>
-    		</section>
-    	</div>
+					<ul class="weekdays">
+					  <li>Mo</li>
+					  <li>Tu</li>
+					  <li>We</li>
+					  <li>Th</li>
+					  <li>Fr</li>
+					  <li>Sa</li>
+					  <li>Su</li>
+					</ul>
+					<ul class="12am-12:30am">
+						12am - 12:30am
+					</ul>
 
-    	<!--+++++++++++++++++++++++++ CONFIRMATION STEP ++++++++++++++++++++++++-->
-    	<div class="col-md-4 __confirmation_step">
-    		<h3> Schedule Preview </h3>
-				<pre id="output"></pre>
+				</section>
     	</div>
 
 		<!-- Scripts -->
@@ -128,6 +121,5 @@
 			<script src="https://unpkg.com/flatpickr"></script>
 			<script src="./gcal.js"></script>
 			<script src="./main.js"></script>
-
 	</body>
 </html>
