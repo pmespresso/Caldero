@@ -51,84 +51,12 @@ form input {
 
 form button {
   height: 30px;
-  line-height: 30px;
   background: #ff5f2e;
   color: #fff;
-  margin-top: 10px;
   cursor: pointer;
 }
 
-form .error {
-	align-items: flex-end;
-}
-
-/* Month header */
-.week {
-    padding: 70px 25px;
-    width: 100%;
-    background: #fcbe32;
-
-}
-
-/* Month list */
-.week ul {
-    margin: 0;
-    padding: 0;
-		display: flex;
-		justify-content: center;
-}
-
-.week ul li#preview_hero {
-	color: white;
-	font-size: 34px;
-}
-
-/* Previous button inside month header */
-.week .prev {
-    float: left;
-    padding-top: 10px;
-}
-
-/* Next button */
-.week .next {
-    float: right;
-    padding-top: 10px;
-}
-
-/* Weekdays (Mon-Sun) */
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color:#ddd;
-}
-
-.weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-}
-
-/* Days (1-31) */
-.days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-}
-
-.days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color:#777;
-}
-
-/* Highlight the "current" day */
-.days li .active {
-    padding: 5px;
-    background: #1abc9c;
-    color: white !important
-}
+/*form .error {
+	font-size: 12px;
+	color: red;
+}*/

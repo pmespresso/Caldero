@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+	<!DOCTYPE HTML>
 <html>
 	<head>
 		<title></title>
@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" />
 
 		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 		<script src="https://use.fontawesome.com/36b79cd5df.js"></script>
@@ -30,87 +31,68 @@
 		</header>
 
 	<!--+++++++++++++++++++++++++ ENTRY STEP ++++++++++++++++++++++++-->
-    	<div class="col-md-4 __entry_step">
-    		<section class="mandatories__section">
-				<h3> Enter Mandatories: </h3>
-					<form id="mandatory_entry" action="" name="mandatory_entry">
-						<label for="summary">Task Name: </label>
-						<input class="summary" id="summary" type="text" name="summary" placeholder="e.g. History 4A Lecture"  />
-						<br/>
-						<label for="location">Location:</label><input class="location" id="location" type="text" name="location" placeholder="404 Wheel Hall"  />
-						<br/>
+	<div class="container">
 
-						<p class="flatpickr">
-							<label for="startDateTime">Start:</label>
-							<input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
- 							<!--End time must be later than Start time-->
-						</p>
-						<p class="flatpickr">
-							<label for="endDateTime">End:</label> <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
-							<!-- <a class="input-button" data-clear><i class="fa fa-close"></i></a> -->
-							<!--End time must be later than Start time-->
-						</p>
-						<button type="submit" name="submit" >Submit</button> <br/>
-						<small><i>Only Start and End Fields Are Necessary.</i></small>
-					</form>
-			</section>
+			<div class="col-md-offset-2 col-md-8 entry_step">
+		    		<section class="mandatories__section">
+						<h3> Enter Mandatories: </h3>
+							<form id="mandatory_entry" action="" name="mandatory_entry">
+								<label for="summary">Task Name: </label>
+								<input class="summary" id="summary" type="text" name="summary" placeholder="e.g. History 4A Lecture"  />
+								<br/>
+								<label for="location">Location:</label><input class="location" id="location" type="text" name="location" placeholder="404 Wheel Hall"  />
+								<br/>
 
-			<!-- <section class="wanttos__section">
-			<h3> Enter Want To's: </h3>
-				<form id="wanttos_entry" action="">
-					<input id="wanttos_event__summary" type="text" name="summary" placeholder="summary">
-					<input id="wanttos_event__location" type="text" name="location" placeholder="location">
-					<input id="wanttos_event__description" type="text" name="description" placeholder="description">
-					<input id="wanttos_event__start-end" type="text" name="start-end" placeholder="start-end">
-<br />
-					500 hours 5,000 hours 10,000 hours <br/>
-					<input type="radio" name="desired-proficiency">Meh
-					<input type="radio" name="desired-proficiency">Mullah
-					<input type="radio" name="desired-proficiency">Master
+								<p class="flatpickr">
+									<label for="startDateTime">Start:</label>
+									<input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
+		 							<!--End time must be later than Start time-->
+								</p>
+								<p class="flatpickr">
+									<label for="endDateTime">End:</label> <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
+									<!-- <a class="input-button" data-clear><i class="fa fa-close"></i></a> -->
+									<!--End time must be later than Start time-->
+								</p>
+								<button type="submit" name="submit" >Save</button> <br/>
+								<small><i>Only Start and End Fields Are Necessary.</i></small>
+							</form>
+					</section>
+					<section id="inventory">
+						<table style="width:100%">
+							<tr>
+								<th colspan="4">Your Mandatories</th>
+								<th colspan="2">Mind</th>
+								<th colspan="2">Body</th>
+								<th colspan="2">Soul</th>
+							</tr>
+							<tr id="mandatories">
+							</tr>
+							<tr id="mind">
 
-					<input type="submit" name="submit">
+							</tr>
+							<tr id="body">
+							</tr>
+							<tr id="soul">
 
-				</form>
-			</section>
+							</tr>
+						</table>
+					</section>
+			</div> <!-- End col md 4 -->
 
-			<section class="workload__section">
-				<p> Desired Toal Work per Week: </p>
-				<form>
-					<input type="text" name="hoursPerWeek" placeholder="e.g. 60 hours per week">
-					<input type="submit" name="submit">
-				</form>
 
-			</section>-->
-    	</div>
-		<!--+++++++++++++++++++++++++ INVENTORY SCREEN ++++++++++++++++++++++++-->
-    	<div class="col-md-8 week_preview">
+		<!--+++++++++++++++++++++++++ WEEK PREVIEW SCREEN ++++++++++++++++++++++++-->
+    	<div class="col-md-offset-2 col-md-8 week_preview">
 				<header>
 					<h3> Week Preview </h3>
 				</header>
 
 				<section>
-					<div class="week">
-					  <ul>
-					    <li id="preview_hero">
-					      A Typical Week
-					    </li>
-					  </ul>
-					</div>
-					<ul class="weekdays">
-					  <li>Mo</li>
-					  <li>Tu</li>
-					  <li>We</li>
-					  <li>Th</li>
-					  <li>Fr</li>
-					  <li>Sa</li>
-					  <li>Su</li>
-					</ul>
-					<ul class="12am-12:30am">
-						12am - 12:30am
-					</ul>
-
+					<div id="calendar"></div>
 				</section>
-    	</div>
+
+				<button class="btn btn-lg btn-success center-block">Sync to Google Calendar</button>
+    	</div> <!-- week_preview col-md-8 -->
+		</div>
 
 		<!-- Scripts -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -119,6 +101,7 @@
 			<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 			<script src="moment.js"></script>
 			<script src="https://unpkg.com/flatpickr"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
 			<script src="./gcal.js"></script>
 			<script src="./main.js"></script>
 	</body>
