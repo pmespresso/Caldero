@@ -4,6 +4,7 @@ $(document).ready(function() {
   $('#calendar').fullCalendar({
     defaultView: 'agendaWeek',
     editable: 'true',
+    height: 'parent',
     dayClick: function(date, jsEvent, view) {
       console.log("date clicked");
     }

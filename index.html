@@ -31,82 +31,125 @@
 		</header>
 
 	<!--+++++++++++++++++++++++++ ENTRY STEP ++++++++++++++++++++++++-->
-	<div class="container-fluid">
+	<div class="container">
+		<div class="row">
 
-		<div class="col-md-6 entry_step">
-					<section class="mandatories__section">
-					<h3> Enter Mandatories: </h3>
-						<form id="mandatory_entry" action="" name="mandatory_entry">
-							<input class="summary" id="summary" type="text" name="summary" placeholder="Untitled event"  />
-								<label style="color: #fcbe32">On: </label>
-									<section class="day_block">
-											<label>Mondays</label>
-											<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-											<label>Tuesdays</label>
-											<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-											<label>Wednesdays</label>
-											<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-										<label>Thursdays</label>
-											<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-										<label>Fridays</label>
-											<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-										<label>Saturdays</label>
-										<input type="radio" class="day" name="day"/>
-									</section>
-									<section class="day_block">
-										<label>Sundays</label>
-										<input type="radio" class="day" name="day"/>
-									</section>
+			<div class="col-md-6 entry_step">
+				 <section class="mandatories__section">
+						<h3> Enter Your Mandatory Duties for a Typical Week </h3>
+							<form id="mandatory_entry" action="" name="mandatory_entry">
+								<input class="summary" id="summary" type="text" name="summary" placeholder="Untitled event | e.g. CS 188 Lecture"  />
+							<label>On: </label>
+								<section id="day_inputs">
 
-							<section class="event_details">
-								<div>
-									<label>From: </label>
-									<input type="text" class="time" id="startTime" placeholder="e.g. 11:00am"/>
-								</div>
-								<div>
-									<label >To: </label>
-									<input type="text" class="time" id="endTime" placeholder="e.g. 12:00pm"/>
-								</div>
-								<div>
+										<section class="day_block">
+												<label>Mondays</label>
+												<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+												<label>Tuesdays</label>
+												<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+												<label>Wednesdays</label>
+												<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+											<label>Thursdays</label>
+												<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+											<label>Fridays</label>
+												<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+											<label>Saturdays</label>
+											<input type="radio" class="day" name="day"/>
+										</section>
+										<section class="day_block">
+											<label>Sundays</label>
+											<input type="radio" class="day" name="day"/>
+										</section>
+								</section> <!-- end day inputs -->
+
+
+								<section class="event_details">
+									<div class="detail">
+										<label>From: </label>
+										<input type="text" class="time" id="startTime" placeholder="e.g. 11:00am"/>
+									</div>
+									<div class="detail">
+										<label >To: </label>
+										<input type="text" class="time" id="endTime" placeholder="e.g. 12:00pm"/>
+									</div>
+
+								</section>
+								<div id="location">
 									<label>At: </label>
 									<input id="location-input" class="controls" type="text" placeholder="e.g. 404 Soda Hall">
 								</div>
-
+								<section class="form_actions">
+									<button class="btn btn-md btn-success" type="submit" name="submit" >Save</button>
+									<button class="btn btn-md btn-danger discard" data-toggle ><i class="fa fa-close"></i></button>
 								</section>
-
-							<button type="submit" name="submit" >Save</button> <button data-toggle class="discard"><i class="fa fa-close"></i></button>
-						</form>
-						<div id="map" style="height: 400px;">
-
-						</div>
-				</section>
-
-				<button class="btn btn-lg btn-success center-block">Sync to Google Calendar</button>
-
-		</div> <!-- End col md 4 -->
-
-
-		<!--+++++++++++++++++++++++++ WEEK PREVIEW SCREEN ++++++++++++++++++++++++-->
-			<div class="col-md-6 week_preview">
-				<header>
-					<h3> Week Preview </h3>
-				</header>
-
+							</form>
+					</section>
+			</div> <!-- End col md 6 -->
+			<div class="col-md-6 location-map">
 				<section>
-					<div id="calendar"></div>
+					<div id="map" style="height: 500px;">
+					</div>
 				</section>
+			</div> <!-- End col md 6 location-map -->
+</div> <!-- End row -->
+
+<!--+++++++++++++++++++++++++ WEEK PREVIEW SCREEN ++++++++++++++++++++++++-->
+		<div class="row">
+			<div class="col-md-12">
+				<section class="week_preview_section">
+					<header>
+						<h3> A Preview of a Typical Week </h3>
+					</header>
+
+					<section class="calendar_container">
+						<div id="calendar"></div>
+					</section>
+				</section>
+
 			</div> <!-- week_preview col-md-6 -->
-</div> <!-- end container-fluid -->
+		</div> <!-- end row -->
+
+<!--+++++++++++++++++++++++++ MIND/BODY/SOUL LOG ++++++++++++++++++++++++-->
+<div class="row">
+	<div class="col-md-6">
+		<section>
+			<ul>
+				<li><h2>Mandatory Duties: </h2> <p id="mandatory_hours"></p> </li>
+				<br/>
+
+				<li><h2>Mind: </h2> <p id="mind_hours"></p> </li>
+				<li><h2>Body: </h2> <p id="body_hours"></p> </li>
+				<li><h2>Soul: </h2> <p id="soul_hours"></p> </li>
+			</ul>
+		</section>
+
+	</div> <!-- end col 6 -->
+</div> <!-- end row -->
+
+
+
+<div class="col-md-4 actions">
+	<section>
+		<button class="btn btn-lg btn-primary center-block">Sync to Google Calendar</button>
+	</section>
+</div>
+</div> <!-- end container -->
+<footer>
+	<div class="container">
+		<span class="pull-left"><a href="https://www.github.io/yjkimjunior/caldero">Caldero</a></span>
+		<span class="pull-right copyright">Young Joong Kim</span>
+	</div>
+</footer>
 
 
 		<!-- Scripts -->

@@ -3,20 +3,34 @@ body, * {
 	font-family: Veranda, sans-serif;
 }
 
-h1, h2, h3, h4 {
-	color: #fcbe32;
+.container {
+	min-height: 100%;
+}
+
+footer {
+	position: relative;
+	margin-top: -100px; /* negative value of footer height */
+	height: 050px;
+	clear:both;
+	padding: 30px 30px;
+	background-color: #f2f2f2;
+}
+
+h3 {
+	text-align: center;
 }
 
 ul {list-style-type: none;}
 
-section {
-	padding: 30px 20px;
-	margin: 0 auto;
+label {
+	font-size: 15px;
+	line-height: 3px;
+	font-family: monospace;
 }
 
-input {
-	padding: 10px 20px;
-	margin: 10px auto;
+section {
+	padding: 15px 10px;
+	margin: 0 auto;
 }
 
 form {
@@ -25,23 +39,11 @@ form {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-}
-
-form input.summary {
-  width: 100%;
-}
-
-form label,
-form small {
-	margin: 0 7px;
-	color: #fcbe32;
+	justify-content: center;
 }
 
 form input {
 	padding: 20px 12px;
-	margin: 10px auto;
-  height: 25px;
-  line-height: 25px;
   background: #fff;
 	border: 1px solid black;
   -moz-box-sizing: border-box;
@@ -49,35 +51,55 @@ form input {
   box-sizing: border-box;
 }
 
-form button {
-  height: 30px;
-	width: 33%;
-	margin: 0 auto;
-  background: #ff5f2e;
-  color: #fff;
-  cursor: pointer;
+form input.summary {
+	flex: 0 0 100%;
+	margin: 0 0 15px 0;
 }
 
-form .event_details {
+#day_inputs {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-form input.time {
-	margin-left: 5px;
-}
-
-
-form input:focus {
-	border-color: #4d90fe;
-}
-
 .day_block {
-	height: 40px;
+	flex: 0 0 7%;
+	justify-content: space-between;
 }
 
+.event_details {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.detail {
+	flex: 0 0 40%;
+}
+
+#location {
+	flex: 0 0 100%;
+}
+
+#location-input {
+	width: 100%;
+}
+
+.form_actions {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form_actions button {
+	flex: 0 0 50%;
+}
 
 /*form .error {
 	font-size: 12px;
 	color: red;
 }*/
+
+.calendar_container {
+	height: 500px;
+}
