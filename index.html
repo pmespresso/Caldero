@@ -36,39 +36,40 @@
 
 			<div class="col-md-6 entry_step">
 				 <section class="mandatories__section">
-						<h3> Enter Your Mandatory Duties for a Typical Week </h3>
-							<form id="mandatory_entry" action="" name="mandatory_entry">
-								<input class="summary" id="summary" type="text" name="summary" placeholder="Untitled event | e.g. CS 188 Lecture"  />
-							<label>On: </label>
-								<section id="day_inputs">
 
+							<form id="mandatory_entry" action="" name="mandatory_entry">
+								<h3> Enter Your Mandatory Duties for a Typical Week </h3>
+								<input class="summary" id="summary_mand" type="text" name="summary" placeholder="Untitled event | e.g. CS 188 Lecture"  />
+
+								<section id="day_inputs">
+										<label>On: </label>
 										<section class="day_block">
 												<label>Mondays</label>
-												<input type="radio" class="day" name="day"/>
+												<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 												<label>Tuesdays</label>
-												<input type="radio" class="day" name="day"/>
+												<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 												<label>Wednesdays</label>
-												<input type="radio" class="day" name="day"/>
+												<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 											<label>Thursdays</label>
-												<input type="radio" class="day" name="day"/>
+												<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 											<label>Fridays</label>
-												<input type="radio" class="day" name="day"/>
+												<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 											<label>Saturdays</label>
-											<input type="radio" class="day" name="day"/>
+											<input type="checkbox" class="day" name="day"/>
 										</section>
 										<section class="day_block">
 											<label>Sundays</label>
-											<input type="radio" class="day" name="day"/>
+											<input type="checkbox" class="day" name="day"/>
 										</section>
 								</section> <!-- end day inputs -->
 
@@ -89,8 +90,8 @@
 									<input id="location-input" class="controls" type="text" placeholder="e.g. 404 Soda Hall">
 								</div>
 								<section class="form_actions">
-									<button class="btn btn-md btn-success" type="submit" name="submit" >Save</button>
-									<button class="btn btn-md btn-danger discard" data-toggle ><i class="fa fa-close"></i></button>
+									<button class="btn btn-lg btn-success" type="submit" name="submit" >Save</button>
+									<button class="btn btn-lg btn-danger discard" data-toggle ><i class="fa fa-close"></i></button>
 								</section>
 							</form>
 					</section>
@@ -132,8 +133,74 @@
 				<li><h2>Soul: </h2> <p id="soul_hours"></p> </li>
 			</ul>
 		</section>
-
 	</div> <!-- end col 6 -->
+
+
+<!--+++++++++++ Additionals Form +++++++++++-->
+	<div class="col-md-6">
+		<section class="additionals__section">
+			<form class="" id="additional_entry">
+
+				<h3>Enter Your Additional Goals for the Year</h3>
+				<input class="summary" id="summary_add" type="text" name="summary" placeholder="Untitled addition | e.g. Practice Guitar"  />
+
+				<section class="level_select">
+					<label>Current Level:</label>
+					<section class="current_level">
+						<input class="level" id="current_level" type="checkbox"/>
+						<input class="level" id="current_level" type="checkbox"/>
+						<input class="level" id="current_level" type="checkbox"/>
+						<input class="level" id="current_level" type="checkbox"/>
+						<input class="level" id="current_level" type="checkbox"/>
+					</section>
+
+					<label>Desired Level:</label>
+					<section class="desired_level">
+						<input class="level" id="desired_level" type="checkbox"/>
+						<input class="level" id="desired_level" type="checkbox"/>
+						<input class="level" id="desired_level" type="checkbox"/>
+						<input class="level" id="desired_level" type="checkbox"/>
+						<input class="level" id="desired_level" type="checkbox"/>
+					</section>
+				</section>
+
+
+				<section class="mbs_select">
+						<div class="mind">
+							<img src="mind_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<label>Mind</label>
+						</div>
+						<div class="body">
+							<img src="body_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<label>Body</label>
+						</div>
+						<div class="soul">
+							<img src="soul_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<label>Soul</label>
+						</div>
+
+
+				</section>
+
+				<section class="hours_select">
+					<section>
+						<label>Workload:</label>
+					</section>
+					<section>
+						<input type="text" class="desired_hours_add" />
+					</section>
+					<section>
+						<p> hours per week</p>
+					</section>
+				</section>
+
+				<section>
+					<button class="btn btn-lg btn-info" id="add">Add</button>
+				</section>
+			</form>
+		</section>
+	</div> <!-- end col 6 -->
+<!--+++++++++++ Additionals Form +++++++++++-->
 </div> <!-- end row -->
 
 

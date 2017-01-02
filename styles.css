@@ -7,29 +7,36 @@ body, * {
 	min-height: 100%;
 }
 
+.mandatories__section,
+.additionals__section {
+	padding: 40px 0;
+}
+
 footer {
 	position: relative;
-	margin-top: -100px; /* negative value of footer height */
-	height: 050px;
-	clear:both;
+	margin-top: -150px; /* negative value of footer height */
+	height: 150px;
+	clear: both;
 	padding: 30px 30px;
 	background-color: #f2f2f2;
 }
 
 h3 {
 	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	line-height: 2px;
+	letter-spacing: 1.1px;
 }
 
 ul {list-style-type: none;}
 
 label {
 	font-size: 15px;
-	line-height: 3px;
-	font-family: monospace;
 }
 
 section {
-	padding: 15px 10px;
+	padding: 8px 10px;
 	margin: 0 auto;
 }
 
@@ -40,6 +47,8 @@ form {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	border: 1px solid #f2f2f2;
+	box-shadow: 1px 1px 4px 0;
 }
 
 form input {
@@ -56,6 +65,12 @@ form input.summary {
 	margin: 0 0 15px 0;
 }
 
+.week_preview_section {
+	border: 1px solid #f2f2f2;
+	box-shadow: 1px 1px 6px 0;
+	padding: 20px;
+}
+
 #day_inputs {
 	display: flex;
 	flex-direction: row;
@@ -65,6 +80,10 @@ form input.summary {
 .day_block {
 	flex: 0 0 7%;
 	justify-content: space-between;
+}
+
+.day {
+	margin-left: 25px !important;
 }
 
 .event_details {
@@ -86,6 +105,11 @@ form input.summary {
 	width: 100%;
 }
 
+.location-map {
+	padding-top: 30px;
+	margin-top: 30px;
+}
+
 .form_actions {
 	display: flex;
 	justify-content: space-between;
@@ -102,4 +126,74 @@ form input.summary {
 
 .calendar_container {
 	height: 500px;
+}
+
+.level_select {
+	flex: 0 0 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.current_level {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.desired_level {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.level_select label {
+	flex: 0 0 50%;
+	padding: 5px;
+	margin: 5px;
+}
+
+.level_select input {
+	flex: 1;
+	padding: 5px;
+	margin: 5px;
+}
+
+.mbs_select {
+
+	flex: 0 0 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.mbs_select label {
+	flex: 0 0 10%;
+	margin-left: 8px;
+	padding-left: 8px;
+}
+
+
+.hours_select {
+	display: flex;
+	flex: 0 0 100%;
+}
+
+.hours_select label {
+	flex: 2;
+	margin-top: 7px;
+	padding-top: 7px;
+}
+
+.hours_select input {
+	flex: 1;
+}
+
+.hours_select p {
+	margin-top: 7px;
+	padding-top: 7px;
+	flex: 1;
 }
