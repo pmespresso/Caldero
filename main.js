@@ -9,10 +9,8 @@ $(document).ready(function() {
     }
   });
 
-  $(".flatpickr").flatpickr({
-  	enableTime: true,
-  	wrap: true
-  });
+  $('#startTime').timepicker();
+  $('#endTime').timepicker();
 });
 
 

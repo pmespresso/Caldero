@@ -3,6 +3,10 @@ body, * {
 	font-family: Veranda, sans-serif;
 }
 
+h1, h2, h3, h4 {
+	color: #fcbe32;
+}
+
 ul {list-style-type: none;}
 
 section {
@@ -16,33 +20,29 @@ input {
 }
 
 form {
-	background-color: #004e66;
 	padding: 25px;
+	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
 }
 
-form label,
-form input,
-form button {
-  margin-bottom: 3px;
-  display: block;
-  width: 80%;
-	margin: 0 auto;
+form input.summary {
+  width: 100%;
 }
 
 form label,
 form small {
+	margin: 0 7px;
 	color: #fcbe32;
 }
 
 form input {
+	padding: 20px 12px;
+	margin: 10px auto;
   height: 25px;
   line-height: 25px;
   background: #fff;
-  padding: 0 6px;
 	border: 1px solid black;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -51,10 +51,31 @@ form input {
 
 form button {
   height: 30px;
+	width: 33%;
+	margin: 0 auto;
   background: #ff5f2e;
   color: #fff;
   cursor: pointer;
 }
+
+form .event_details {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+form input.time {
+	margin-left: 5px;
+}
+
+
+form input:focus {
+	border-color: #4d90fe;
+}
+
+.day_block {
+	height: 40px;
+}
+
 
 /*form .error {
 	font-size: 12px;

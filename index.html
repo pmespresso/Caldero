@@ -12,7 +12,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" />
-
+		<link rel="stylesheet" href="./jquery.timepicker.css" />
 		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 		<script src="https://use.fontawesome.com/36b79cd5df.js"></script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -31,57 +31,73 @@
 		</header>
 
 	<!--+++++++++++++++++++++++++ ENTRY STEP ++++++++++++++++++++++++-->
-	<div class="container">
+	<div class="container-fluid">
 
-			<div class="col-md-offset-2 col-md-8 entry_step">
-		    		<section class="mandatories__section">
-						<h3> Enter Mandatories: </h3>
-							<form id="mandatory_entry" action="" name="mandatory_entry">
-								<label for="summary">Task Name: </label>
-								<input class="summary" id="summary" type="text" name="summary" placeholder="e.g. History 4A Lecture"  />
-								<br/>
-								<label for="location">Location:</label><input class="location" id="location" type="text" name="location" placeholder="404 Wheel Hall"  />
-								<br/>
+		<div class="col-md-6 entry_step">
+					<section class="mandatories__section">
+					<h3> Enter Mandatories: </h3>
+						<form id="mandatory_entry" action="" name="mandatory_entry">
+							<input class="summary" id="summary" type="text" name="summary" placeholder="Untitled event"  />
+								<label style="color: #fcbe32">On: </label>
+									<section class="day_block">
+											<label>Mondays</label>
+											<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+											<label>Tuesdays</label>
+											<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+											<label>Wednesdays</label>
+											<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+										<label>Thursdays</label>
+											<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+										<label>Fridays</label>
+											<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+										<label>Saturdays</label>
+										<input type="radio" class="day" name="day"/>
+									</section>
+									<section class="day_block">
+										<label>Sundays</label>
+										<input type="radio" class="day" name="day"/>
+									</section>
 
-								<p class="flatpickr">
-									<label for="startDateTime">Start:</label>
-									<input class="datetime" id="startDateTime" name="startDateTime" type="text" data-input/>
-		 							<!--End time must be later than Start time-->
-								</p>
-								<p class="flatpickr">
-									<label for="endDateTime">End:</label> <input class="datetime" id="endDateTime" name="endDateTime" type="text" data-input/>
-									<!-- <a class="input-button" data-clear><i class="fa fa-close"></i></a> -->
-									<!--End time must be later than Start time-->
-								</p>
-								<button type="submit" name="submit" >Save</button> <br/>
-								<small><i>Only Start and End Fields Are Necessary.</i></small>
-							</form>
-					</section>
-					<section id="inventory">
-						<table style="width:100%">
-							<tr>
-								<th colspan="4">Your Mandatories</th>
-								<th colspan="2">Mind</th>
-								<th colspan="2">Body</th>
-								<th colspan="2">Soul</th>
-							</tr>
-							<tr id="mandatories">
-							</tr>
-							<tr id="mind">
+							<section class="event_details">
+								<div>
+									<label>From: </label>
+									<input type="text" class="time" id="startTime" placeholder="e.g. 11:00am"/>
+								</div>
+								<div>
+									<label >To: </label>
+									<input type="text" class="time" id="endTime" placeholder="e.g. 12:00pm"/>
+								</div>
+								<div>
+									<label>At: </label>
+									<input id="location-input" class="controls" type="text" placeholder="e.g. 404 Soda Hall">
+								</div>
 
-							</tr>
-							<tr id="body">
-							</tr>
-							<tr id="soul">
+								</section>
 
-							</tr>
-						</table>
-					</section>
-			</div> <!-- End col md 4 -->
+							<button type="submit" name="submit" >Save</button> <button data-toggle class="discard"><i class="fa fa-close"></i></button>
+						</form>
+						<div id="map" style="height: 400px;">
+
+						</div>
+				</section>
+
+				<button class="btn btn-lg btn-success center-block">Sync to Google Calendar</button>
+
+		</div> <!-- End col md 4 -->
 
 
 		<!--+++++++++++++++++++++++++ WEEK PREVIEW SCREEN ++++++++++++++++++++++++-->
-    	<div class="col-md-offset-2 col-md-8 week_preview">
+			<div class="col-md-6 week_preview">
 				<header>
 					<h3> Week Preview </h3>
 				</header>
@@ -89,10 +105,9 @@
 				<section>
 					<div id="calendar"></div>
 				</section>
+			</div> <!-- week_preview col-md-6 -->
+</div> <!-- end container-fluid -->
 
-				<button class="btn btn-lg btn-success center-block">Sync to Google Calendar</button>
-    	</div> <!-- week_preview col-md-8 -->
-		</div>
 
 		<!-- Scripts -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -101,8 +116,13 @@
 			<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 			<script src="moment.js"></script>
 			<script src="https://unpkg.com/flatpickr"></script>
+			<script src="./jquery.timepicker.js"></script>
 			<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
 			<script src="./gcal.js"></script>
 			<script src="./main.js"></script>
+			<script src="./placeSearch.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzDye-Asrc7G4LS1rls92u394grBDWsfs&libraries=places&callback=initAutocomplete" async defer></script>
+
+
 	</body>
 </html>
