@@ -12,6 +12,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" />
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="./jquery.timepicker.css" />
 		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 		<script src="https://use.fontawesome.com/36b79cd5df.js"></script>
@@ -19,6 +20,25 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
+		<div class="mandatories__section" style="display: none;">
+				 <form id="mandatory_entry" action="" name="mandatory_entry">
+					 <h3> Enter a Title and Location</h3>
+					 <input class="summary" id="summary_mand" type="text" name="summary" placeholder="Untitled event | e.g. CS 188 Lecture"  />
+					 <div id="location">
+						 <label>At: </label>
+						 <input id="location-input" class="controls" name="location" type="text" placeholder="e.g. 404 Soda Hall">
+					 </div>
+
+					 <div id="map" style="height: 300px; width: 100%;">
+					 </div>
+
+					 <section class="form_actions">
+						 <input class="btn btn-lg btn-success" type="submit" />
+						 <button class="btn btn-lg btn-warning discard" type="reset" >Clear Fields</button>
+						 <button class="btn btn-lg btn-danger" id="delete" >Delete Event</button>
+					 </section>
+					 </form>
+		 </div>
 		<header>
 			<h1 style="text-align: center">CalDero</h1>
 			<div id="authorize-div">
@@ -32,84 +52,19 @@
 
 	<!--+++++++++++++++++++++++++ ENTRY STEP ++++++++++++++++++++++++-->
 	<div class="container">
-		<div class="row">
-
-			<div class="col-md-6 entry_step">
-				 <section class="mandatories__section">
-
-							<form id="mandatory_entry" action="" name="mandatory_entry">
-								<h3> Enter Your Mandatory Duties for a Typical Week </h3>
-								<input class="summary" id="summary_mand" type="text" name="summary" placeholder="Untitled event | e.g. CS 188 Lecture"  />
-
-								<section id="day_inputs">
-										<label>On: </label>
-										<section class="day_block">
-												<label>Mondays</label>
-												<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-												<label>Tuesdays</label>
-												<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-												<label>Wednesdays</label>
-												<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-											<label>Thursdays</label>
-												<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-											<label>Fridays</label>
-												<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-											<label>Saturdays</label>
-											<input type="checkbox" class="day" name="day"/>
-										</section>
-										<section class="day_block">
-											<label>Sundays</label>
-											<input type="checkbox" class="day" name="day"/>
-										</section>
-								</section> <!-- end day inputs -->
-
-
-								<section class="event_details">
-									<div class="detail">
-										<label>From: </label>
-										<input type="text" class="time" id="startTime" placeholder="e.g. 11:00am"/>
-									</div>
-									<div class="detail">
-										<label >To: </label>
-										<input type="text" class="time" id="endTime" placeholder="e.g. 12:00pm"/>
-									</div>
-
-								</section>
-								<div id="location">
-									<label>At: </label>
-									<input id="location-input" class="controls" type="text" placeholder="e.g. 404 Soda Hall">
-								</div>
-								<section class="form_actions">
-									<button class="btn btn-lg btn-success" type="submit" name="submit" >Save</button>
-									<button class="btn btn-lg btn-danger discard" data-toggle ><i class="fa fa-close"></i></button>
-								</section>
-							</form>
-					</section>
-			</div> <!-- End col md 6 -->
-			<div class="col-md-6 location-map">
-				<section>
-					<div id="map" style="height: 500px;">
-					</div>
-				</section>
-			</div> <!-- End col md 6 location-map -->
-</div> <!-- End row -->
+			<section>
+				<p class="lead">
+					You Can Manually Enter Your Mandatories Below Or:
+				</p>
+				<button class="btn btn-lg btn-warning"> Import From Google Calendar </button>
+			</section>
 
 <!--+++++++++++++++++++++++++ WEEK PREVIEW SCREEN ++++++++++++++++++++++++-->
 		<div class="row">
 			<div class="col-md-12">
 				<section class="week_preview_section">
 					<header>
-						<h3> A Preview of a Typical Week </h3>
+						<h3> Fill In Your Mandatory Duties </h3>
 					</header>
 
 					<section class="calendar_container">
@@ -167,15 +122,15 @@
 
 				<section class="mbs_select">
 						<div class="mind">
-							<img src="mind_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<!-- <img src="mind_icon.png" alt="mind_icon" class="icon_add" /> <br /> -->
 							<label>Mind</label>
 						</div>
 						<div class="body">
-							<img src="body_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<!-- <img src="body_icon.png" alt="mind_icon" class="icon_add" /> <br /> -->
 							<label>Body</label>
 						</div>
 						<div class="soul">
-							<img src="soul_icon.png" alt="mind_icon" class="icon_add" /> <br />
+							<!-- <img src="soul_icon.png" alt="mind_icon" class="icon_add" /> <br /> -->
 							<label>Soul</label>
 						</div>
 
@@ -224,14 +179,16 @@
 			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+			<script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
 			<script src="moment.js"></script>
 			<script src="https://unpkg.com/flatpickr"></script>
 			<script src="./jquery.timepicker.js"></script>
 			<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
 			<script src="./gcal.js"></script>
 			<script src="./main.js"></script>
+			<script src="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js" type="text/javascript" charset="utf-8"></script>
 			<script src="./placeSearch.js"></script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzDye-Asrc7G4LS1rls92u394grBDWsfs&libraries=places&callback=initAutocomplete" async defer></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzDye-Asrc7G4LS1rls92u394grBDWsfs&libraries=places" async defer></script>
 
 
 	</body>

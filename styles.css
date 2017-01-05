@@ -110,19 +110,18 @@ form input.summary {
 	margin-top: 30px;
 }
 
-.form_actions {
+.mandatories__section .form_actions {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .form_actions button {
-	flex: 0 0 50%;
+	flex: 0 0 30%;
 }
 
-/*form .error {
-	font-size: 12px;
+form .error {
 	color: red;
-}*/
+}
 
 .calendar_container {
 	height: 500px;

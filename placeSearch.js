@@ -1,4 +1,5 @@
 function initAutocomplete() {
+  console.log("ASASSASA");
   var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 37.1343, lng: 36.2021},
           zoom: 5,
